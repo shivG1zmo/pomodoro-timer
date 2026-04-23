@@ -85,6 +85,8 @@ reset.addEventListener('click', ()=> {
     if(mode==="break"){
         alert('Back to work')
         mode = "work"
+        document.body.classList.remove("break-mode","work-mode")
+        document.body.classList.add("work-mode") 
     } 
     clearInterval(timer)
     isRunning = false

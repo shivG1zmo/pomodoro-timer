@@ -93,5 +93,30 @@ reset.addEventListener('click', ()=> {
     updateDisplay()
 }})
 
+switchBtn.addEventListener('click',()=> {
+   if(mode === "work"){
+                alert('Break time 5 minutes')
+                mode = "break"
+                clearInterval(timer)
+                isRunning = false
+                timer = null 
+                timeLeft = 300
+                document.body.classList.remove("work-mode", "break-mode")
+                document.body.classList.add("break-mode")  
+                updateDisplay()
+            
+                }
+                else if(mode === "break"){
+                    alert('Back to work')
+                    mode = "work"
+                    clearInterval(timer)
+                    isRunning = false
+                    timer = null
+                    timeLeft = 1500
+                    document.body.classList.remove("break-mode","work-mode")
+                    document.body.classList.add("work-mode")  
+                    updateDisplay()
+                }                      
+})
 
 updateDisplay()

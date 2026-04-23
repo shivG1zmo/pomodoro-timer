@@ -39,8 +39,11 @@ start.addEventListener('click',()=> {
                 clearInterval(timer)
                 isRunning = false
                 timer = null 
-                timeLeft = 300   
+                timeLeft = 300
+                document.body.classList.remove("work-mode", "break-mode")
+                document.body.classList.add("break-mode")  
                 updateDisplay()
+            
                 }
                 else if(mode === "break"){
                     alert('Back to work')
@@ -49,6 +52,8 @@ start.addEventListener('click',()=> {
                     isRunning = false
                     timer = null
                     timeLeft = 1500
+                    document.body.classList.remove("work-mode", "break-mode")
+                    document.body.classList.add("work-mode")  
                     updateDisplay()
                 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             }
